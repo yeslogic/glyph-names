@@ -5,14 +5,15 @@
 //!
 //! ### Example
 //! ```
+//! use std::borrow::Cow;
 //! use glyph_names::glyph_name;
 //!
-//! assert_eq!(glyph_name(37, 'a' as u32), "a");
-//! assert_eq!(glyph_name(9, '%' as u32), "percent");
-//! assert_eq!(glyph_name(999, '☺' as u32), "smileface");
-//! assert_eq!(glyph_name(12, '↣' as u32), "uni21A3");
-//! assert_eq!(&glyph_name(908, '🕴' as u32), "u1F574");
-//! assert_eq!(&glyph_name(1, 0x110000), "g1");
+//! assert_eq!(glyph_name('a' as u32), Some(Cow::from("a")));
+//! assert_eq!(glyph_name('%' as u32), Some(Cow::from("percent")));
+//! assert_eq!(glyph_name('☺' as u32), Some(Cow::from("smileface")));
+//! assert_eq!(glyph_name('↣' as u32), Some(Cow::from("uni21A3")));
+//! assert_eq!(glyph_name('🕴' as u32), Some(Cow::from("u1F574")));
+//! assert_eq!(glyph_name(0x110000), None);
 //! ```
 
 use std::borrow::Cow;
@@ -22,15 +23,12 @@ use std::convert::TryFrom;
 mod aglfn;
 
 /// Look up a glyph name for the supplied glyph id, char code pair.
-pub fn glyph_name(gid: u16, ch: u32) -> Cow<'static, str> {
-    char::try_from(ch)
-        .ok()
-        .map(|ch| {
-            aglfn::glyph_name(ch)
-                .map(Cow::from)
-                .unwrap_or_else(|| Cow::from(unicode_glyph_name(ch)))
-        })
-        .unwrap_or_else(|| Cow::from(format!("g{}", gid)))
+pub fn glyph_name(ch: u32) -> Option<Cow<'static, str>> {
+    char::try_from(ch).ok().map(|ch| {
+        aglfn::glyph_name(ch)
+            .map(Cow::from)
+            .unwrap_or_else(|| Cow::from(unicode_glyph_name(ch)))
+    })
 }
 
 // It is recommended to specify names by using the ‘uni’ prefix for characters in the Basic
