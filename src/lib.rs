@@ -1,4 +1,5 @@
 #![deny(missing_docs)]
+#![no_std]
 
 //! Map a character to a glyph name according to the
 //! [Adobe Glyph List Specification](https://github.com/adobe-type-tools/agl-specification).
@@ -16,8 +17,12 @@
 //! assert_eq!(glyph_name(0x110000), None);
 //! ```
 
-use std::borrow::Cow;
-use std::convert::TryFrom;
+#[macro_use(format)]
+extern crate alloc;
+
+use alloc::borrow::Cow;
+use alloc::string::String;
+use core::convert::TryFrom;
 
 /// Adobe Glyph List For New Fonts
 mod aglfn;
