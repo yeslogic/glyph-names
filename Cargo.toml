@@ -2,7 +2,7 @@
 name = "glyph-names"
 version = "0.1.0"
 authors = ["YesLogic Pty. Ltd. <info@yeslogic.com>"]
-edition = "2018"
+edition = "2021"
 
 homepage = "https://github.com/yeslogic/glyph-names"
 documentation = "https://docs.rs/crate/glyph-names"
@@ -14,5 +14,3 @@ license = "BSD-3-Clause"
 description = "Mapping of characters to glyph names according to the Adobe Glyph List Specification"
 keywords = ["glyph", "name", "font"]
 categories = ["text-processing"]
-
-[dependencies]
