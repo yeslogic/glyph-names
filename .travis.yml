@@ -1,0 +1,13 @@
+os: linux
+language: rust
+
+rust:
+  - stable
+  - 1.38.0
+
+before_script:
+  - rustup component add rustfmt
+
+script:
+  - cargo fmt -- --check
+  - cargo test
