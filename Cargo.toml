@@ -2,7 +2,7 @@
 name = "glyph-names"
 version = "0.1.0"
 authors = ["YesLogic Pty. Ltd. <info@yeslogic.com>"]
-edition = "2021"
+edition = "2018"
 
 homepage = "https://github.com/yeslogic/glyph-names"
 documentation = "https://docs.rs/crate/glyph-names"

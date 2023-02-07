@@ -41,9 +41,9 @@ fn unicode_glyph_name(ch: char) -> String {
     let ch = ch as u32;
     if ch <= 0xFFFF {
         // Basic Multilingual Plane
-        format!("uni{ch:04X}")
+        format!("uni{:04X}", ch)
     } else {
-        format!("u{ch:04X}")
+        format!("u{:04X}", ch)
     }
 }
 
