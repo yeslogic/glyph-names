@@ -2,6 +2,8 @@ glyph-names
 ===========
 
 <div align="center">
+  <a href="https://travis-ci.com/yeslogic/glyph-names">
+    <img src="https://travis-ci.com/yeslogic/glyph-names.svg?branch=master" alt="Build Status"></a>
   <a href="https://docs.rs/glyph-names">
     <img src="https://docs.rs/glyph-names/badge.svg" alt="Documentation">
   </a>
@@ -16,7 +18,7 @@ glyph-names
 <br>
 
 Mapping of characters to glyph names according to the [Adobe Glyph List
-Specification][agl-specification].
+Specification][agl-specification]. This crate is no-std compatible.
 
 Usage
 -----
