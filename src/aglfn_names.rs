@@ -1,5 +1,9 @@
-/// A slice containing all glyph names. This can be used to do
-/// reverse lookups/find out if a search term maps to a glyph.
+/// A slice containing all glyph names.
+///
+/// This can be used to do reverse lookups/find out if a search term maps to a glyph.
+///
+/// **Note:** Only named glyphs are present in this slice, names like uniABCD and uABCDEF are
+/// omitted.
 pub static GLYPH_NAME_PAIRS: &[(char, &str)] = &[
     ('\u{0020}', "space"),
     ('\u{0021}', "exclam"),
