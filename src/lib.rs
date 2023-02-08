@@ -29,7 +29,7 @@ mod aglfn;
 mod aglfn_names;
 pub use aglfn_names::GLYPH_NAME_PAIRS;
 
-/// Look up a glyph name for the supplied glyph id, char code pair.
+/// Look up a glyph name for the supplied char code.
 pub fn glyph_name(ch: u32) -> Option<Cow<'static, str>> {
     char::try_from(ch).ok().map(|ch| {
         aglfn::glyph_name(ch)
