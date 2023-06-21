@@ -2,8 +2,8 @@ glyph-names
 ===========
 
 <div align="center">
-  <a href="https://travis-ci.com/yeslogic/glyph-names">
-    <img src="https://travis-ci.com/yeslogic/glyph-names.svg?branch=master" alt="Build Status"></a>
+  <a href="https://github.com/yeslogic/glyph-names/actions/workflows/ci.yml">
+    <img src="https://github.com/yeslogic/glyph-names/actions/workflows/ci.yml/badge.svg" alt="Build Status"></a>
   <a href="https://docs.rs/glyph-names">
     <img src="https://docs.rs/glyph-names/badge.svg" alt="Documentation">
   </a>
